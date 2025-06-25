@@ -11,6 +11,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "."),
     },
   },
+  // Configure for GitHub Pages deployment
+  base: '/AliTamada/',
   build: {
     // Optimize build output
     minify: 'terser',
