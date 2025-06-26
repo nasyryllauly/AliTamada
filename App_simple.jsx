@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { MessageCircle, Phone } from 'lucide-react'
+import './App_simple.css'
 
 // Импорт изображений
 import heroPhoto from './assets/hero_photo_main.jpeg'
