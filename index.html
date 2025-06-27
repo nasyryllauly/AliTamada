@@ -124,8 +124,11 @@
         }
 
         @keyframes fadeOut {
+            from { opacity: 1; transform: translateX(0); }
             to { opacity: 0; transform: translateX(100%); }
         }
+
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -826,28 +829,29 @@
 
         let currentNotification = 0;
         function showNextNotification() {
-            const notification = document.getElementById('notification');
-            notification.style.display = 'block';
+            const notificationElement = document.getElementById('notification');
+
+            // Remove the hide class if it exists
+            notificationElement.classList.remove("notification-hide");
+
+            // Update content
+            notificationElement.textContent = notifications[currentNotification];
+            currentNotification = (currentNotification + 1) % notifications.length;
+
+            // Show the notification
+              notificationElement.style.display = 'block';
+
             setTimeout(() => {
-               notification.classList.add("notification-hide");
-            notification.addEventListener("animationend", function handler() {
-                notification.style.display = "none";
-                notification.classList.remove("notification-hide");
-                notification.removeEventListener("animationend", handler);
-            }, { once: true });
+                notificationElement.classList.add('notification-hide');
             }, 5000);
-        }     // Remove the hide class if it exists
-                notificationElement.classList.remove("notification-hide");
 
-                // Update content
-                notificationElement.textContent = notifications[currentNotification];
-                currentNotification = (currentNotification + 1) % notifications.length;
-
-                // Add the hide class after 5 seconds
-                setTimeout(() => {
-                    notificationElement.classList.add("notification-hide");
-                }, 5000);
-            }
+            notificationElement.addEventListener('animationend', function handler() {
+                if (notificationElement.classList.contains('notification-hide')) {
+                    notificationElement.style.display = 'none';
+                    notificationElement.classList.remove('notification-hide');
+                    notificationElement.removeEventListener('animationend', handler);
+                }
+            }, { once: true });
         }
 
         // Show new notification every 5 seconds
