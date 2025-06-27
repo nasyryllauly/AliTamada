@@ -51,7 +51,7 @@ function App() {
   };
 
   const handleBooking = () => {
-    handleTelegram();
+    handleWhatsApp();
     setShowBanner(false);
   };
 
@@ -69,9 +69,6 @@ function App() {
             <span>🔥 АКЦИЯ! Забронируйте дату сегодня - скидка 10%! Только 3 свободные даты в этом месяце!</span>
             <button className="promo-btn" onClick={handleBooking}>
               Забронировать!
-            </button>
-            <button className="close-btn" onClick={() => setShowBanner(false)}>
-              ✕
             </button>
           </div>
         </div>
