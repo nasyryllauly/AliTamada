@@ -1,14 +1,452 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/AliTamada/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тамада Али Тоганасов - Лучший ведущий в Казахстане | Свадьбы, Юбилеи, Корпоративы</title>
-    <script type="module" crossorigin src="/AliTamada/assets/index-CuQY6563.js"></script>
-    <link rel="stylesheet" crossorigin href="/AliTamada/assets/index-BDmVCn0_.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: linear-gradient(180deg, #0f172a 0%, #1e40af 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #f97316;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 30px;
+            object-fit: cover;
+            margin: 0 auto 30px;
+            display: block;
+            border: 4px solid #06b6d4;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .features {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #f97316, #ea580c);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 30px;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #06b6d4;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f97316;
+            display: block;
+        }
+
+        .stat-label {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #06b6d4;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            border-radius: 30px;
+            object-fit: cover;
+            margin: 0 auto 40px;
+            display: block;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #06b6d4;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #06b6d4;
+        }
+
+        .service-card p {
+            color: #cbd5e1;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #06b6d4;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">⭐ ЛУЧШИЙ ТАМАДА 2024</div>
+            
+            <img src="ee80a9f5-a0f3-47a6-9b1f-cb402735513d.jpeg" alt="Али Тоганасов" class="hero-image">
+            
+            <h1>Ваши гости будут говорить об этом годами!</h1>
+            
+            <p>Али Тоганасов — тамада, который превращает любое мероприятие в незабываемое шоу</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <span>✅</span>
+                    <span>100% гарантия веселья</span>
+                </div>
+                <div class="feature">
+                    <span>✅</span>
+                    <span>Без банальных конкурсов</span>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="https://t.me/alitoganasov" class="btn btn-primary">🚀 Сделать праздник незабываемым!</a>
+                <a href="https://wa.me/77785878284" class="btn btn-secondary">⚡ Заказать шоу мечты!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <img src="84f54e56-2252-4986-aedf-8643adb707a4.jpeg" alt="Али Тоганасов" class="about-image">
+                </div>
+                <div class="about-text">
+                    <h2>Обо мне</h2>
+                    <p>🔥 1000+ довольных клиентов уже выбрали Али</p>
+                    <p>🏆 Лучший тамада Алматы</p>
+                    <p>✅ Застрахованные мероприятия</p>
+                    <p>🎓 Диплом юриста</p>
+                    <p>Мой путь начался с КВН и привел к профессиональной карьере тамады. Имея диплом юриста, я идеально веду деловую часть церемоний, сочетая юмор и официоз в нужных пропорциях.</p>
+                    <p>⚡ Зарядим ваших гостей смехом и эмоциями — без банальных конкурсов!</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">лет опыта<br>с 2014 года</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">довольных клиентов<br>и их число растет!</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">языка<br>каз/рус</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <div class="container">
+            <h2>Портфолио</h2>
+            <img src="14d93268-9b6a-43f3-802c-98c4a70d3b7b.jpeg" alt="Али Тоганасов" class="portfolio-image">
+            
+            <div style="margin-top: 40px;">
+                <h3 style="color: #f97316; margin-bottom: 20px;">💯 ГАРАНТИЯ КАЧЕСТВА:</h3>
+                <p style="font-size: 1.2rem; color: #cbd5e1;">Если ваши гости не будут в восторге - вернем 100% стоимости!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Услуги</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <span class="service-icon">💒</span>
+                    <h3>Свадьбы</h3>
+                    <p>Создам незабываемую атмосферу для вашего особенного дня</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎭</span>
+                    <h3>Традиционные торжества</h3>
+                    <p>Проведу традиционные торжества с уважением к обычаям</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎂</span>
+                    <h3>Юбилеи</h3>
+                    <p>Сделаю ваш праздник ярким и запоминающимся</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🏢</span>
+                    <h3>Корпоративы</h3>
+                    <p>Организую деловые и развлекательные мероприятия для компаний</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 40px;">
+                Выезжаю по всему Казахстану для проведения мероприятий любого масштаба
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-buttons">
+                <a href="tel:+77785878284" class="contact-btn">
+                    📞 +7778 587 8284
+                </a>
+                <a href="https://wa.me/77785878284" class="contact-btn">
+                    💬 WhatsApp
+                </a>
+                <a href="https://t.me/alitoganasov" class="contact-btn">
+                    📱 Telegram
+                </a>
+                <a href="https://instagram.com/ali.toganasov" class="contact-btn">
+                    📸 @ali.toganasov
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
+
