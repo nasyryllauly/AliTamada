@@ -112,7 +112,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 999;
             animation: slideIn 0.5s ease forwards;
-            max-width: 300px;
         }
 
         .notification.notification-hide {
@@ -124,15 +123,9 @@
             to { transform: translateX(0); opacity: 1; }
         }
 
-
-
-        .notification.notification-hide {
-            animation: fadeOut 0.5s ease forwards;
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateX(100%); }
         }
-
-
-
-        /* Header Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -832,11 +825,18 @@
         ];
 
         let currentNotification = 0;
-
         function showNextNotification() {
-            const notificationElement = document.getElementById("notification1");
-            if (notificationElement) {
-                // Remove the hide class if it exists
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+               notification.classList.add("notification-hide");
+            notification.addEventListener("animationend", function handler() {
+                notification.style.display = "none";
+                notification.classList.remove("notification-hide");
+                notification.removeEventListener("animationend", handler);
+            }, { once: true });
+            }, 5000);
+        }     // Remove the hide class if it exists
                 notificationElement.classList.remove("notification-hide");
 
                 // Update content
