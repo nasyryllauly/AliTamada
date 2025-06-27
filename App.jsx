@@ -117,7 +117,7 @@ function App() {
           <div className="hero-container">
             <div className="hero-left">
               <div className="hero-image-frame">
-                <img src="/assets/hero_photo_main.jpeg" alt="Али Тоганасов - Тамада" className="hero-image" />
+                <img src="https://nasyryllauly.github.io/AliTamada/assets/hero_photo_main.jpeg" alt="Али Тоганасов - Тамада" className="hero-image" />
               </div>
               <div className="ready-dialog">
                 <span className="ready-emoji">😊</span>
@@ -167,7 +167,7 @@ function App() {
             
             <div className="about-content">
               <div className="about-image">
-                <img src="/assets/about_photo_moon.jpeg" alt="Али Тоганасов на фоне луны" />
+                <img src="https://nasyryllauly.github.io/AliTamada/assets/about_photo_moon.jpeg" alt="Али Тоганасов на фоне луны" />
               </div>
               
               <div className="about-text">
