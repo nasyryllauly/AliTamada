@@ -124,39 +124,7 @@
             to { opacity: 0; transform: translateX(100%); }
         }
 
-        /* Popup Widget */
-        .popup-widget {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
-            color: white;
-            padding: 20px 30px;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            z-index: 998;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            animation: bounce 2s infinite;
-        }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        .popup-widget button {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-        }
 
         /* Header Section */
         .hero {
@@ -643,13 +611,6 @@
                 font-size: 20px;
             }
 
-            .popup-widget {
-                left: 10px;
-                right: 10px;
-                transform: none;
-                border-radius: 15px;
-            }
-
             .notification {
                 right: 10px;
                 left: 10px;
@@ -677,11 +638,7 @@
         ✅ Данияр из Нур-Султана только что забронировал(а) корпоратив!
     </div>
 
-    <!-- Popup Widget -->
-    <div class="popup-widget">
-        🎯 Готовы к незабываемому празднику?
-        <button onclick="window.open('https://t.me/alitoganasov', '_blank')">Заказать сейчас!</button>
-    </div>
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -862,7 +819,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Made with Manus Create my website</p>
+            <p>&copy; 2024 Али Тоганасов. Все права защищены.</p>
         </div>
     </footer>
 
