@@ -295,16 +295,6 @@ function App() {
         </section>
       </div>
 
-      {/* Плавающие кнопки */}
-      <div className="floating-buttons">
-        <button className="floating-btn primary" onClick={handleTelegram}>
-          🚀 Сделать праздник незабываемым!
-        </button>
-        <button className="floating-btn secondary" onClick={handleWhatsApp}>
-          ⚡ Заказать шоу мечты!
-        </button>
-      </div>
-
       {/* Фиксированные социальные кнопки */}
       <div className="fixed-social">
         <button className="social-btn telegram" onClick={handleTelegram} title="Написать в Telegram">
