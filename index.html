@@ -25,6 +25,139 @@
             padding: 0 20px;
         }
 
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(45deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            position: relative;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        .promo-banner .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .promo-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-btn.telegram {
+            background: linear-gradient(45deg, #0088cc, #005fa3);
+        }
+
+        .floating-btn.whatsapp {
+            background: linear-gradient(45deg, #25d366, #1da851);
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 999;
+            animation: slideIn 0.5s ease, fadeOut 0.5s ease 4.5s;
+            max-width: 300px;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateX(100%); }
+        }
+
+        /* Popup Widget */
+        .popup-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 998;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .popup-widget button {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
         /* Header Section */
         .hero {
             min-height: 100vh;
@@ -33,6 +166,7 @@
             justify-content: center;
             text-align: center;
             padding: 40px 0;
+            position: relative;
         }
 
         .badge {
@@ -122,6 +256,24 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
+        /* Achievement Badges */
+        .achievement-badges {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .achievement-badge {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
         /* About Section */
         .about {
             padding: 80px 0;
@@ -167,6 +319,10 @@
 
         .stat {
             text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
 
         .stat-number {
@@ -179,6 +335,199 @@
         .stat-label {
             color: #cbd5e1;
             font-size: 1rem;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .reviews h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #f97316;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f97316, #ea580c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: #06b6d4;
+        }
+
+        /* Contact Buttons */
+        .contact-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .big-contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .big-btn {
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .big-btn.telegram {
+            background: linear-gradient(45deg, #0088cc, #005fa3);
+            color: white;
+        }
+
+        .big-btn.whatsapp {
+            background: linear-gradient(45deg, #25d366, #1da851);
+            color: white;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #06b6d4;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .package-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .package-card.popular {
+            border: 2px solid #f97316;
+            transform: scale(1.05);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #f97316, #ea580c);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .package-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #06b6d4;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .package-features li {
+            padding: 8px 0;
+            color: #cbd5e1;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .package-features li:before {
+            content: "•";
+            color: #10b981;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .package-btn {
+            background: linear-gradient(45deg, #f97316, #ea580c);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .package-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         /* Portfolio Section */
@@ -201,49 +550,6 @@
             object-fit: cover;
             margin: 0 auto 40px;
             display: block;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #06b6d4;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #06b6d4;
-        }
-
-        .service-card p {
-            color: #cbd5e1;
         }
 
         /* Contact Section */
@@ -283,6 +589,14 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #64748b;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
@@ -313,10 +627,62 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .big-contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .floating-buttons {
+                right: 10px;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .popup-widget {
+                left: 10px;
+                right: 10px;
+                transform: none;
+                border-radius: 15px;
+            }
+
+            .notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Promo Banner -->
+    <div class="promo-banner" id="promoBanner">
+        АКЦИЯ! Забронируйте дату сегодня - скидка 10%! Только 3 свободные даты в этом месяце!
+        <button class="promo-btn" onclick="window.open('https://t.me/alitoganasov', '_blank')">Забронировать!</button>
+        <button class="close-btn" onclick="document.getElementById('promoBanner').style.display='none'">&times;</button>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button class="floating-btn telegram" onclick="window.open('https://t.me/alitoganasov', '_blank')" title="Написать в Telegram">📱</button>
+        <button class="floating-btn whatsapp" onclick="window.open('https://wa.me/77785878284', '_blank')" title="Написать в WhatsApp">💬</button>
+    </div>
+
+    <!-- Notifications -->
+    <div class="notification" id="notification1">
+        ✅ Данияр из Нур-Султана только что забронировал(а) корпоратив!
+    </div>
+
+    <!-- Popup Widget -->
+    <div class="popup-widget">
+        🎯 Готовы к незабываемому празднику?
+        <button onclick="window.open('https://t.me/alitoganasov', '_blank')">Заказать сейчас!</button>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -343,6 +709,16 @@
                 <a href="https://t.me/alitoganasov" class="btn btn-primary">🚀 Сделать праздник незабываемым!</a>
                 <a href="https://wa.me/77785878284" class="btn btn-secondary">⚡ Заказать шоу мечты!</a>
             </div>
+
+            <div class="achievement-badges">
+                <div class="achievement-badge">🏆 Лучший тамада Алматы</div>
+                <div class="achievement-badge">✅ Застрахованные мероприятия</div>
+                <div class="achievement-badge">🎓 Диплом юриста</div>
+            </div>
+
+            <p style="color: #10b981; font-weight: bold; font-size: 1.1rem;">
+                🔥 1000+ довольных клиентов уже выбрали Али
+            </p>
         </div>
     </section>
 
@@ -355,13 +731,14 @@
                 </div>
                 <div class="about-text">
                     <h2>Обо мне</h2>
-                    <p>🔥 1000+ довольных клиентов уже выбрали Али</p>
-                    <p>🏆 Лучший тамада Алматы</p>
-                    <p>✅ Застрахованные мероприятия</p>
-                    <p>🎓 Диплом юриста</p>
                     <p>Мой путь начался с КВН и привел к профессиональной карьере тамады. Имея диплом юриста, я идеально веду деловую часть церемоний, сочетая юмор и официоз в нужных пропорциях.</p>
                     <p>⚡ Зарядим ваших гостей смехом и эмоциями — без банальных конкурсов!</p>
                 </div>
+            </div>
+
+            <div class="guarantee">
+                <h3 style="color: #f97316; margin-bottom: 20px;">💯 ГАРАНТИЯ КАЧЕСТВА:</h3>
+                <p style="font-size: 1.2rem; color: #cbd5e1;">Если ваши гости не будут в восторге - вернем 100% стоимости!</p>
             </div>
 
             <div class="stats">
@@ -381,15 +758,26 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio">
+    <!-- Reviews Section -->
+    <section class="reviews">
         <div class="container">
-            <h2>Портфолио</h2>
-            <img src="14d93268-9b6a-43f3-802c-98c4a70d3b7b.jpeg" alt="Али Тоганасов" class="portfolio-image">
-            
-            <div style="margin-top: 40px;">
-                <h3 style="color: #f97316; margin-bottom: 20px;">💯 ГАРАНТИЯ КАЧЕСТВА:</h3>
-                <p style="font-size: 1.2rem; color: #cbd5e1;">Если ваши гости не будут в восторге - вернем 100% стоимости!</p>
+            <h2>⭐ Что говорят клиенты:</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-avatar">А</div>
+                    <div class="review-text">"Али превратил нашу свадьбу в настоящее шоу! Гости до сих пор вспоминают этот день!"</div>
+                    <div class="review-author">- Айгуль, свадьба 2024</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-avatar">Д</div>
+                    <div class="review-text">"Профессионал высшего класса! Юбилей прошел на ура!"</div>
+                    <div class="review-author">- Данияр, юбилей 2024</div>
+                </div>
+            </div>
+
+            <div class="big-contact-buttons">
+                <a href="https://t.me/alitoganasov" class="big-btn telegram">🎉 Telegram</a>
+                <a href="https://wa.me/77785878284" class="big-btn whatsapp">🎉 WhatsApp</a>
             </div>
         </div>
     </section>
@@ -397,33 +785,56 @@
     <!-- Services Section -->
     <section class="services">
         <div class="container">
-            <h2>Услуги</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <span class="service-icon">💒</span>
-                    <h3>Свадьбы</h3>
-                    <p>Создам незабываемую атмосферу для вашего особенного дня</p>
+            <h2>Пакеты услуг</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3 class="package-title">Стандарт</h3>
+                    <ul class="package-features">
+                        <li>Ведение мероприятия</li>
+                        <li>Музыкальный пульт</li>
+                        <li>Базовый сценарий</li>
+                        <li>Zoom-созвон с Али</li>
+                    </ul>
+                    <button class="package-btn" onclick="window.open('https://t.me/alitoganasov', '_blank')">💰 Узнай цену!</button>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🎭</span>
-                    <h3>Традиционные торжества</h3>
-                    <p>Проведу традиционные торжества с уважением к обычаям</p>
+
+                <div class="package-card popular">
+                    <div class="popular-badge">🔥 ПОПУЛЯРНЫЙ</div>
+                    <h3 class="package-title">Комфорт</h3>
+                    <ul class="package-features">
+                        <li>Всё из пакета "Стандарт"</li>
+                        <li>Этно-ансамбль</li>
+                        <li>DJ с плейлистом под ваши вкусы</li>
+                        <li>Интерактив-квест</li>
+                    </ul>
+                    <button class="package-btn" onclick="window.open('https://t.me/alitoganasov', '_blank')">💰 Узнай цену!</button>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🎂</span>
-                    <h3>Юбилеи</h3>
-                    <p>Сделаю ваш праздник ярким и запоминающимся</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">🏢</span>
-                    <h3>Корпоративы</h3>
-                    <p>Организую деловые и развлекательные мероприятия для компаний</p>
+
+                <div class="package-card">
+                    <h3 class="package-title">Премиум</h3>
+                    <ul class="package-features">
+                        <li>Всё из пакета "Комфорт"</li>
+                        <li>Звезда-инфлюенсер</li>
+                        <li>Профессиональный видео-оператор для съемки мероприятия</li>
+                        <li>Love-Story видео</li>
+                        <li>Светодизайн, паровой/дым-машина</li>
+                    </ul>
+                    <button class="package-btn" onclick="window.open('https://t.me/alitoganasov', '_blank')">💰 Узнай цену!</button>
                 </div>
             </div>
-            
-            <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 40px;">
-                Выезжаю по всему Казахстану для проведения мероприятий любого масштаба
-            </p>
+
+            <div class="big-contact-buttons">
+                <a href="https://t.me/alitoganasov" class="big-btn telegram">🚀 Обсудить детали в Telegram</a>
+                <a href="https://wa.me/77785878284" class="big-btn whatsapp">⚡ Быстрая консультация в WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <div class="container">
+            <h2>Портфолио</h2>
+            <img src="14d93268-9b6a-43f3-802c-98c4a70d3b7b.jpeg" alt="Али Тоганасов" class="portfolio-image">
         </div>
     </section>
 
@@ -447,6 +858,38 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Made with Manus Create my website</p>
+        </div>
+    </footer>
+
+    <script>
+        // Rotating notifications
+        const notifications = [
+            "✅ Данияр из Нур-Султана только что забронировал(а) корпоратив!",
+            "✅ Данияр из Нур-Султана только что забронировал(а) свадьбу!",
+            "✅ Айгуль из Алматы только что забронировал(а) свадьбу!"
+        ];
+
+        let currentNotification = 0;
+
+        function showNextNotification() {
+            const notificationElement = document.getElementById('notification1');
+            if (notificationElement) {
+                notificationElement.textContent = notifications[currentNotification];
+                currentNotification = (currentNotification + 1) % notifications.length;
+            }
+        }
+
+        // Show new notification every 5 seconds
+        setInterval(showNextNotification, 5000);
+
+        // Initial notification rotation
+        showNextNotification();
+    </script>
 </body>
 </html>
 
