@@ -47,7 +47,7 @@ function App() {
   };
 
   const handleTelegram = () => {
-    window.open('https://t.me/alitamada', '_blank');
+    window.open('https://t.me/alitoganasov', '_blank');
   };
 
   const handleBooking = () => {
@@ -114,7 +114,7 @@ function App() {
           <div className="hero-container">
             <div className="hero-left">
               <div className="hero-image-frame">
-                <img src="https://nasyryllauly.github.io/AliTamada/assets/hero_photo_main.jpeg" alt="Али Тоганасов - Тамада" className="hero-image" />
+                <img src="https://nasyryllauly.github.io/AliTamada/assets/hero_photo_dark_suit.jpeg" alt="Али Тоганасов - Тамада" className="hero-image" />
               </div>
               <div className="ready-dialog">
                 <span className="ready-emoji">😊</span>
