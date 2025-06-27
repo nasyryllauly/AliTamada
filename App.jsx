@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// Массив уведомлений для случайного показа
+// Массив уведомлений точно как в оригинале
 const notifications = [
   "✅ Асель из Шымкента только что забронировал(а) свадьбу!",
-  "✅ Данияр из Алматы заказал юбилей на 50 человек!",
+  "✅ Данияр из Нур-Султана только что забронировал(а) юбилей!",
   "✅ Айгуль забронировала корпоратив на декабрь!",
-  "✅ Ерлан из Нур-Султана выбрал пакет Премиум!",
+  "✅ Ерлан из Алматы выбрал пакет Премиум!",
   "✅ Гульнара заказала той на 200 гостей!",
   "✅ Арман из Шымкента забронировал свадьбу!",
   "✅ Жанна выбрала пакет Комфорт для юбилея!"
@@ -25,7 +25,6 @@ function App() {
       setCurrentNotification(randomNotification);
       setShowNotification(true);
       
-      // Скрываем уведомление через 5 секунд
       setTimeout(() => {
         setShowNotification(false);
       }, 5000);
@@ -63,7 +62,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* Баннер акции */}
+      {/* Баннер акции - точная копия */}
       {showBanner && (
         <div className="promo-banner">
           <div className="promo-content">
@@ -78,14 +77,14 @@ function App() {
         </div>
       )}
 
-      {/* Всплывающие уведомления */}
+      {/* Всплывающие уведомления - точная копия */}
       {showNotification && (
         <div className="notification">
           {currentNotification}
         </div>
       )}
 
-      {/* Всплывающий диалог */}
+      {/* Всплывающий диалог - точная копия */}
       {showDialog && (
         <div className="dialog-overlay">
           <div className="dialog">
@@ -101,7 +100,7 @@ function App() {
         </div>
       )}
 
-      {/* Плавающие кнопки призыва к действию */}
+      {/* Плавающие кнопки - точная копия */}
       <div className="floating-buttons">
         <button className="floating-btn primary" onClick={handleTelegram}>
           🚀 Сделать праздник незабываемым!
@@ -111,15 +110,34 @@ function App() {
         </button>
       </div>
 
-      {/* Основной контент */}
+      {/* Основной контент - точная копия структуры */}
       <main>
-        {/* Hero секция */}
+        {/* Hero секция - точная копия */}
         <section className="hero">
-          <div className="hero-content">
-            <div className="hero-text">
-              <div className="badge">⭐ ЛУЧШИЙ ТАМАДА 2024</div>
-              <h1>Ваши гости будут говорить об этом <span className="highlight">годами!</span></h1>
-              <p className="hero-subtitle">Али Тоганасов — тамада, который превращает любое мероприятие в незабываемое шоу</p>
+          <div className="hero-container">
+            <div className="hero-left">
+              <div className="hero-image-frame">
+                <img src="/assets/hero_photo_main.jpeg" alt="Али Тоганасов - Тамада" className="hero-image" />
+              </div>
+              <div className="ready-dialog">
+                <span className="ready-emoji">😊</span>
+                <span>Готовы к незабываемому празднику?</span>
+              </div>
+            </div>
+            
+            <div className="hero-right">
+              <div className="badge-top">⭐ ЛУЧШИЙ ТАМАДА 2024</div>
+              
+              <h1 className="hero-title">
+                Ваши гости<br />
+                будут говорить<br />
+                об этом<br />
+                <span className="highlight-blue">годами!</span>
+              </h1>
+              
+              <p className="hero-subtitle">
+                <em>Али Тоганасов — тамада, который превращает любое мероприятие в незабываемое шоу</em>
+              </p>
               
               <div className="hero-features">
                 <div className="feature">✅ 100% гарантия веселья</div>
@@ -127,17 +145,13 @@ function App() {
               </div>
 
               <div className="hero-buttons">
-                <button className="cta-btn primary" onClick={handleTelegram}>
+                <button className="cta-btn blue" onClick={handleTelegram}>
                   🚀 Сделать праздник незабываемым!
                 </button>
-                <button className="cta-btn secondary" onClick={handleWhatsApp}>
+                <button className="cta-btn green" onClick={handleWhatsApp}>
                   ⚡ Заказать шоу мечты!
                 </button>
               </div>
-            </div>
-            
-            <div className="hero-image">
-              <img src="/assets/hero_photo_main.jpeg" alt="Али Тоганасов - Тамада" />
             </div>
           </div>
           
@@ -146,7 +160,7 @@ function App() {
           </div>
         </section>
 
-        {/* О себе */}
+        {/* О себе - точная копия */}
         <section className="about">
           <div className="container">
             <h2>Обо мне</h2>
@@ -176,7 +190,7 @@ function App() {
               </div>
             </div>
             
-            {/* Статистика */}
+            {/* Статистика - точная копия */}
             <div className="stats">
               <div className="stat">
                 <div className="stat-number">10+</div>
@@ -194,7 +208,7 @@ function App() {
           </div>
         </section>
 
-        {/* Отзывы */}
+        {/* Отзывы - точная копия */}
         <section className="testimonials">
           <div className="container">
             <div className="testimonial">
@@ -215,11 +229,23 @@ function App() {
           </div>
         </section>
 
-        {/* Пакеты услуг */}
+        {/* Кнопки Telegram/WhatsApp */}
+        <section className="social-buttons">
+          <div className="container">
+            <div className="social-buttons-row">
+              <button className="social-button telegram" onClick={handleTelegram}>
+                🎉 Telegram
+              </button>
+              <button className="social-button whatsapp" onClick={handleWhatsApp}>
+                🎉 WhatsApp
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Пакеты услуг - точная копия */}
         <section className="packages">
           <div className="container">
-            <h2>Пакеты услуг</h2>
-            
             <div className="packages-grid">
               <div className="package">
                 <h3>Стандарт</h3>
@@ -234,8 +260,7 @@ function App() {
                 </button>
               </div>
               
-              <div className="package popular">
-                <div className="popular-badge">🔥 ПОПУЛЯРНЫЙ</div>
+              <div className="package">
                 <h3>Комфорт</h3>
                 <ul>
                   <li>• Всё из пакета "Стандарт"</li>
@@ -248,7 +273,8 @@ function App() {
                 </button>
               </div>
               
-              <div className="package">
+              <div className="package popular">
+                <div className="popular-badge">🔥 ПОПУЛЯРНЫЙ</div>
                 <h3>Премиум</h3>
                 <ul>
                   <li>• Всё из пакета "Комфорт"</li>
@@ -264,21 +290,19 @@ function App() {
             </div>
             
             <div className="packages-cta">
-              <button className="cta-btn primary" onClick={handleTelegram}>
+              <button className="cta-btn blue" onClick={handleTelegram}>
                 🚀 Обсудить детали в Telegram
               </button>
-              <button className="cta-btn secondary" onClick={handleWhatsApp}>
+              <button className="cta-btn green" onClick={handleWhatsApp}>
                 ⚡ Быстрая консультация в WhatsApp
               </button>
             </div>
           </div>
         </section>
 
-        {/* Услуги */}
+        {/* Услуги - точная копия */}
         <section className="services">
           <div className="container">
-            <h2>Мои услуги</h2>
-            
             <div className="services-grid">
               <div className="service">
                 <div className="service-icon">💒</div>
@@ -307,14 +331,13 @@ function App() {
           </div>
         </section>
 
-        {/* Контакты */}
+        {/* Контакты - точная копия */}
         <section className="contact">
           <div className="container">
-            <h2>Свяжитесь со мной</h2>
             <p>Выезжаю по всему Казахстану для проведения мероприятий любого масштаба</p>
             
             <div className="contact-info">
-              <div className="contact-item">
+              <div className="contact-phone">
                 <strong>+7778 587 8284</strong>
               </div>
               
@@ -333,7 +356,7 @@ function App() {
         </section>
       </main>
 
-      {/* Фиксированные социальные кнопки */}
+      {/* Фиксированные социальные кнопки - точная копия */}
       <div className="fixed-social">
         <button className="social-btn telegram" onClick={handleTelegram} title="Написать в Telegram">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
