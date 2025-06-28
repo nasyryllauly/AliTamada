@@ -111,8 +111,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 999;
-            animation: slideIn 0.5s ease, fadeOut 0.5s ease 4.5s;
-            max-width: 300px;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .notification.notification-hide {
+            animation: fadeOut 0.5s ease forwards;
         }
 
         @keyframes slideIn {
@@ -121,12 +124,11 @@
         }
 
         @keyframes fadeOut {
+            from { opacity: 1; transform: translateX(0); }
             to { opacity: 0; transform: translateX(100%); }
         }
 
 
-
-        /* Header Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -744,9 +746,9 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services">
+<section class="services">
         <div class="container">
+            <img src="14d93268-9b6a-43f3-802c-98c4a70d3b7b.jpeg" alt="Али Тоганасов" class="portfolio-image">
             <h2>Пакеты услуг</h2>
             <div class="packages-grid">
                 <div class="package-card">
@@ -792,13 +794,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio">
-        <div class="container">
-            <h2>Портфолио</h2>
-            <img src="14d93268-9b6a-43f3-802c-98c4a70d3b7b.jpeg" alt="Али Тоганасов" class="portfolio-image">
-        </div>
-    </section>
+
 
     <!-- Contact Section -->
     <section class="contact">
@@ -837,20 +833,32 @@
         ];
 
         let currentNotification = 0;
-
         function showNextNotification() {
-            const notificationElement = document.getElementById('notification1');
-            if (notificationElement) {
-                notificationElement.textContent = notifications[currentNotification];
-                currentNotification = (currentNotification + 1) % notifications.length;
-            }
+            const notificationElement = document.getElementById("notification");
+            notificationElement.textContent = notifications[currentNotification];
+            currentNotification = (currentNotification + 1) % notifications.length;
+
+            // Ensure notification is visible and remove any previous hide classes
+            notificationElement.style.display = 'block';
+            notificationElement.classList.remove('notification-hide');
+
+            // Add the hide class after 5 seconds to trigger fadeOut
+            setTimeout(() => {
+                notificationElement.classList.add('notification-hide');
+            }, 5000);
+
+            // Hide the notification completely after the fadeOut animation completes
+            notificationElement.addEventListener('animationend', function handler() {
+                if (notificationElement.classList.contains('notification-hide')) {
+                    notificationElement.style.display = 'none';
+                    notificationElement.removeEventListener('animationend', handler);
+                }
+            }, { once: true });
         }
 
-        // Show new notification every 5 seconds
-        setInterval(showNextNotification, 5000);
-
-        // Initial notification rotation
+        // Initial notification rotation and interval setup
         showNextNotification();
+        setInterval(showNextNotification, 5000);
     </script>
 </body>
 </html>
